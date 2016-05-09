@@ -15009,7 +15009,7 @@ var w2prompt = function (label, title, callBack) {
                         start       : '',       // string or jquery object or Date object
                         end         : '',       // string or jquery object or Date object
                         blocked     : [],       // [ '4/11/2011', '4/12/2011' ] or [ new Date(2011, 4, 11), new Date(2011, 4, 12) ]
-                        colored     : {},       // { '12/17/2014': 'blue:green', '12/18/2014': 'gray:white'  }; // key has be be formatted with w2utils.settings.dateFormat
+                        colored     : {},       // { '12/17/2014': 'blue:green', '12/18/2014': 'gray:white'  }; // key has to be formatted with w2utils.settings.dateFormat
                         placeholder : null,     // optional. will fall back to this.format if not specified. Only used if this.el has no placeholder attribute.
                         btn_now     : true,     // show/hide the use-current-date-and-time button
                         noMinutes   : false
@@ -16442,7 +16442,7 @@ var w2prompt = function (label, title, callBack) {
                     });
                 }
                 var month, year;
-                var dt = w2utils.isDate($(obj.el).val(), obj.options.format, true);
+                var dt = w2utils.isDateTime($(obj.el).val(), obj.options.format, true);
                 if (dt) { month = dt.getMonth() + 1; year = dt.getFullYear(); }
                 var selDate = null;
                 (function refreshCalendar(month, year) {
@@ -17842,6 +17842,7 @@ var w2prompt = function (label, title, callBack) {
             // add list params
             params['cmd']   = 'get';
             params['recid'] = this.recid;
+            params['name']  = this.name;
             // append other params
             $.extend(params, this.postData);
             $.extend(params, postData);
@@ -17994,6 +17995,7 @@ var w2prompt = function (label, title, callBack) {
                 // add list params
                 params['cmd']   = 'save';
                 params['recid'] = obj.recid;
+                params['name']  = obj.name;
                 // append other params
                 $.extend(params, obj.postData);
                 $.extend(params, postData);

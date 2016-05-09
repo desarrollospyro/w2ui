@@ -1,0 +1,22 @@
+{
+  "name": "w2ui",
+  "description": "Complete set of JavaScript UI widget for development of data-driven web applications. Includes layout, grid, toolbar, sidebar, tabs, forms, fields, popup, overlay",
+  "main": [
+    "dist/w2ui.min.js",
+    "dist/w2ui.min.css"
+  ],
+  "authors": [
+    "tjd <txomin.jimenez.dev@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/desarrollospyro/w2ui",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/vendor",
+    "test",
+    "tests"
+  ]
+}
